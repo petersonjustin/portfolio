@@ -1,0 +1,196 @@
+/* Pull in widget styles */
+@import "widgets-style/results.less";
+@import "widgets-style/user-options.less";
+@import "widgets-style/civa.less";
+
+/*Definitions*/
+.round(@radius: 5px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.shadow(@style, @c) when (iscolor(@c)) {
+    box-shadow:         @style @c;
+    -webkit-box-shadow: @style @c;
+    -moz-box-shadow:    @style @c;
+}
+.shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+    .shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.grayButton{
+    width: 50px;
+    height: 30px;
+    padding: 8px 10px 8px 10px;
+    /*font-family: 'alte_haas_groteskregular';*/
+    color: #333;
+    font-size: 16px;
+    line-height: 18px;
+    border: 2px solid #bfbfbf;
+    border-radius: 3px;
+    text-transform: none;
+    text-align: center;
+    background: #cecece; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NlY2VjZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5Njk2OTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #cecece 0%, #969696 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cecece), color-stop(100%,#969696)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cecece 0%,#969696 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cecece 0%,#969696 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cecece 0%,#969696 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cecece 0%,#969696 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#969696',GradientType=0 ); /* IE6-8 */
+}
+
+/*Styles*/
+#main{
+    color: #333;
+    font-size: 14px;
+    background-color: gray;
+    font-family: 'News Cycle', sans-serif;
+    /*Helpers*/
+
+    .clear{
+        clear: both;
+    }
+    .h2{
+        font-size: 24px;
+        color: #464646;
+    }
+    .h3{
+        font-size: 18px;
+    }
+    .dilb{
+        display: inline-block;
+    }
+    .help-bubble-img{
+        width: 16px;
+        height: 16px;
+    }
+    .help-bubble-div{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+    }
+    .font-12{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .hsa-hiding-wrapper{
+        opacity: 1;
+
+        -webkit-transition: opacity .2s linear;
+    }
+    .opacity-hide{
+        opacity: 0.4;
+    }
+    .ui-slider-handle{
+        border: 1px solid #aaa!important;
+        background: #cadeb9 url(img/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x!important;
+    }
+    /*Main Stage*/
+    .codebaby-stage{
+        position: absolute;
+        top: 0px;
+        position: 0px;
+        border: #ccc 1px solid;
+        .round();
+        .shadow(0 0 5px, 30%);
+        background-color: #daf0fb;
+        .portal-header{
+            color: #464646;
+            font-size: 22px;
+            line-height: 22px;
+            margin: 4px 0 0 8px;
+        }
+        .carefirst-logo img{
+            width: auto;
+            height: 23px;
+            position: absolute;
+            top: 6px;
+            right: 50px;
+            z-index: 100;
+        }
+        .close-button{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: url('http://codebaby.com/customers/carefirst_benefit_focus/img/close-x.png');
+            cursor: pointer;
+        }
+        .select-plan-button{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            margin: 10px 0 0 0;
+            text-decoration: none;
+            color: #464646;
+            text-align: center;
+            div{
+                .grayButton();
+                padding: 4px 0;
+                width: 125px;
+                font-size: 20px;
+                line-height: 24px;
+
+            }
+        }
+        .dynamic-base{
+            position: absolute;
+            width: 430px;
+            height: 545px;
+            font-size: 18px;
+            background-color: #f3f2f2;
+            border: 1px solid #aaa;
+            top: 35px;
+            right: 8px;
+        }
+    }
+    .hsa-disable{
+
+        transition: opacity 0.4s linear;
+        -webkit-transition: opacity 0.4s linear;
+    }
+    /*Widgets*/
+    .codebaby-stage-widget{
+        position: absolute;
+        width: 300px;
+        height: 280px;
+        top: 10px;
+        left: 10px;
+        background: #555;
+        .round();
+    }
+}
+    
+    /*Drawer Template */
+/*    .drawer-widget{
+        position: absolute;
+        z-index: 10;
+        width: 448px;
+        height: 320px;
+        font-size: 18px;
+        background-color: #f3f2f2;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        .drawer-header{
+            height: 22px;
+            width: 409px;
+            margin: 5px 10px 0 7px;
+            padding: 0 0 0 5px;
+            font-size: 18px;
+            line-height: 16px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .drawer-close{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 16px;
+            height: 16px;
+            background: url('/img/close-x.png');
+            cursor: pointer;
+        }
+    }*/

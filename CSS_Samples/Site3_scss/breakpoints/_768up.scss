@@ -1,0 +1,367 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body{}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap{
+    width: 760px;
+}
+
+#content{
+    margin-top: 158px;
+
+    #inner-content{
+        #main{
+            .image-page-header{
+                &.clients{
+                    $height: 616px;
+                    height: $height;
+                    .background{
+                        height: $height;
+                    }
+                    .wrap{
+                        height: $height;
+                    }
+                }
+                &.home{
+                    $height: 616px;
+                    height: $height;
+                    .background{
+                        height: $height;
+                    }
+                    .wrap{
+                        height: $height;
+                    }
+                    .wrap.content{
+                        height: $height;
+                        .row{
+                            .top-image-container{
+                                .top-image{
+                                    left: -100px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .wrap.content{
+                    .row{
+                        .top-image-container{
+                            display: block;
+                            .top-image{
+                                display: block;
+                            }
+                        }
+                        .text{
+                            padding-left: 50px;
+                            text-align: left;
+                            h1{
+                                text-align: left;
+                                font-size: 3.75em;
+                            }
+                        }
+                    }
+                }
+            }
+            .blog-intro-header{
+
+                .slash-bg{
+
+                    .featured-wrap{
+                        padding: 50px 20px 40px 20px;
+
+
+                        p.featured-excerpt{
+                            margin-bottom: 40px;
+
+                        }
+                    }
+                }
+            }
+            .sub-featured-wrap{
+                .sub-featured-post{
+                    .gray-wrapper{
+                        padding: 25px 30px 40px 30px;
+
+                    }
+                }
+            }
+            .single-client-header{
+                margin-top: 60px;
+                text-align: left;
+                .client-title{
+                    margin: 0 0 15px 0;
+                    font-size: 2.5em;
+                }
+                .client-location{
+                    margin: 0 0 30px 0;
+                    font-size: 1.75em;
+                }
+                .client-label{
+                    font-size: 1.5em;
+                    margin: 0 0 10px 0;
+                }
+                .client-name{
+                    margin: 0 0 55px 0;
+                    font-size: 1.13em;
+                }
+            }
+            section.entry-content{
+            }
+            // client list on Our clients page
+            .clients-list{
+                .client{
+                    .client-box{
+                        margin: 75px 0 0 0;
+                        padding-bottom: 60px;
+                        text-align: left;
+                        .quote{
+                            font-size: 1.75em;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header{
+    #inner-header{
+
+        .mobile-header{
+            display: none;
+        }
+        .large-header{
+            display: block;
+            #main{
+            	nav{
+                    text-align: right;
+                    ul#menu-main-menu{
+                        padding: 6px 0px;
+
+                        li{
+                            margin-right: 24px;
+                            float: right;
+                            &:first-child{
+                                margin-right: 10px;
+                            }
+                            a{
+                                font-size: 1.21em;
+                                padding: 0;
+                                color: $link-color;
+                                text-decoration: none;
+                                /* on hover */
+                                &:hover, &:focus{
+                                    color: $link-hover;
+                                    text-decoration: none;
+                                }
+
+                                /* on click */
+                                &:active{
+                                    color: $link-active;
+                                    text-decoration: none;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.header{}
+
+    #logo{}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+.nav{
+    border: 0;
+    ul{
+        background:$black;
+        margin-top:0;
+    }
+    li{
+        float: left;
+        position: relative;
+
+    }
+
+} /* end .nav */
+
+/****************
+Main Content Area
+****************/
+
+
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar{
+    margin-top: 2.2em;
+}
+
+    .widgettitle{
+        border-bottom: 2px solid #444;
+        margin-bottom: 0.75em;
+    }
+
+    .widget{
+        padding: 0 10px;
+        margin: 2.2em 0;
+
+        ul{
+            li{
+                margin-bottom: 0.75em;
+
+                &:first-child{}
+                &:last-child{}
+                a{}
+                /* deep nesting */
+
+                ul{
+                    margin-top: 0.75em;
+                    padding-left: 1em;
+                }
+            }
+        }
+    }
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links{
+    ul{
+        li{
+            a{
+                &:hover{}
+            }
+            /*
+            be careful with the depth of your menus.
+            it's very rare to have multi-depth menus in
+            the footer.
+            */
+            ul{}
+        }
+    }
+} /* end .footer-links */
+
+/* Footer */
+.footer{
+    .cta-container{
+        .footer-cta{
+            padding: 22px 0px;
+            font-size: 1.31em;
+            .text{
+                margin-bottom: 0px;
+                text-align: center;
+            }
+        }
+    }
+    .inner-footer{
+        min-height: 200px;
+        .divider{
+            padding: 0 5px;
+        }
+        .footer-main{
+            margin-top: 55px;
+
+            .nav{
+
+                li{
+                    padding-right: 39px;
+                    width: auto;
+
+                    &:nth-child(odd){
+                        clear: none;
+                        margin-bottom: 0;
+
+                    }
+                    &:nth-child(even){
+                        float: left;
+                        clear: none;
+                    }
+                    ul.sub-menu{
+                        li{
+
+                            &:nth-child(2){
+                                max-width: 122px;
+                            }
+                        }
+                    }
+                }
+            }
+            .contact{
+                .search{
+                    margin: 60px 0 25px 0;
+                }
+                .office{
+                    padding-right: 0;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .footer-resources{
+        	margin-top: 40px;
+            .links{
+                text-align: left;
+            }
+            .white-badge{
+                div{
+                    display: inline-block;
+                }
+                .icon{
+                    text-align: left;
+                    display: inline-block;
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+#get_started_popup{
+    .frame{
+        position: relative;
+        background: url('/wp-content/themes/srm/library/images/slash-pattern.png') repeat $blue-popup-bg;
+        max-width: 750px;
+        padding: 85px 95px;
+    }
+}

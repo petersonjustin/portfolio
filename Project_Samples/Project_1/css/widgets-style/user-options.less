@@ -1,0 +1,315 @@
+.round(@radius: 5px){
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+.transition(@prop, @time: 0.5s, @easing: ease-in-out){
+    transition: @prop @time @easing;
+    -moz-transition: @prop @time @easing;
+    -webkit-transition: @prop @time @easing;
+}
+.user-options-widget{
+    position: absolute;
+    top: 35px;
+    left: 8px;
+    width: 484px;
+    height: 335px;
+    z-index: 10;
+    .slider-wrapper{
+        width: 480px;
+        height: 325px;
+        position: relative;
+        margin: auto;
+        z-index: 5;
+        padding: 5px 0 0 0;
+        border: 1px solid #aaa;
+        background-color: #fafafa;
+        .slider-header{
+            position: relative;
+            width: 153px;
+            font-size: 18px;
+            height: 22px;
+            margin: 0 0 0 7px;
+            padding: 0 0 0 5px;
+            line-height: 16px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .slider-title{
+            font-size: 14px;
+            line-height: 12px;
+            text-align: left;
+            width: 90px;
+            margin: 0 10px;
+        }
+        .plan-select{
+            position: absolute;
+            top: 3px;
+            right: 5px;
+            select{
+                outline: none;
+            }
+        }
+        .slider-values{
+            padding: 3px 0 5px 0;
+            height: 12px;
+            line-height: 10px
+        }
+        table{
+            border-spacing: 0;
+            border: none;
+            tr{
+                border-spacing: 0;
+                border: none;
+                td{
+                    border-spacing: 0;
+                    border: none;
+                }
+            }
+        }
+        .single-slider{
+            width: 350px;
+            height: 57px;
+            table{
+                margin: auto;
+                .slider-style{
+                    height: 10px;
+                    width: 350px;
+                    border: #888 1px solid;
+                    .round(3px);
+                    margin: 0 auto;
+                    a{
+                        outline: none;
+                        height: 16px;
+                        width: 16px;
+                        .round(4px);
+                        cursor: pointer;
+                        margin-top: 1px;
+                    }
+                    &.monthly-hsa-slider{
+                        border-width: 0px;
+                        background: none;
+                        width: 300px;
+                        margin-left: 55px;
+                        z-index: 10;
+                    }
+                }
+            }
+        }
+        .slider-hiding-wrapper{
+            position: relative;
+            .slider-pre-color{
+                height: 22px;
+                width: 50px;
+                background: #fcdb67;
+                position: absolute;
+                top: 14px;
+                left: -6px;
+                border: #000 1px solid;
+                .round(3px);
+            }
+            .slider-fake-bar{
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                height: 10px;
+                width: 350px;
+                border: #888 1px solid;
+                background: #fff;
+                margin: 0 auto;
+                z-index: 1;
+                .round(3px);
+            }
+            .hsa-slider-blue-bar{
+                height: 22px;
+                width: 0px;
+                background: #53b8dc;
+                position: absolute;
+                top: 14px;
+                left: 45px;
+                border: #000 1px solid;
+                .round(3px);
+            }
+            .one-value{
+                position: absolute;
+                top: 38px;
+                left: 7px;
+                width: 100px;
+                height: 20px;
+                font-size: 12px;
+                line-height: 13px;
+                color: #ababab;
+            }
+        }
+        .slider-network{
+            margin-top: 13px;
+            .network-values{
+                .network-focused{
+                    position: absolute;
+                    left: 106px;
+                }
+                .network-broad{
+                    position: absolute;
+                    right: 10px;
+                }
+            }
+            .doctor{
+                position: absolute;
+                top: 70px;
+                left: 12px;
+                a{
+                    font-size: 12px;
+                    font-style: italic;
+                    color: #ababab;
+                }
+            }
+        }
+        .slider-deductible{
+            .deductible-values{
+                .deductible-1{
+                    position: absolute;
+                    left: 106px;
+                }
+                .deductible-2{
+                    position: absolute;
+                    left: 184px;
+                }
+                .deductible-3{
+                    position: absolute;
+                    left: 268px;
+                }
+                .deductible-4{
+                    position: absolute;
+                    left: 360px;
+                }
+                .deductible-5{
+                    position: absolute;
+                    left: 434px;
+                }
+            }
+            .warning-icon{
+                position: absolute;
+                top: 83px;
+                left: 105px;
+                display: block;
+                cursor: pointer;
+                span{
+                    display: inline-block;
+                    font-size: 12px;
+                    line-height: 13px;
+                    position: absolute;
+                    width: 120px;
+                    top: 2px;
+                    left: 22px;
+                }
+            }
+        }
+        .slider-copay{
+            .copay-values{
+                .copay-0{
+                    position: absolute;
+                    left: 106px;
+                }
+                .copay-1{
+                    position: absolute;
+                    left: 171px;
+                }
+                .copay-2{
+                    position: absolute;
+                    left: 241px;
+                }
+                .copay-3{
+                    position: absolute;
+                    left: 311px;
+                }
+                .copay-4{
+                    position: absolute;
+                    left: 383px;
+                }
+                .copay-5{
+                    position: absolute;
+                    left: 451px;
+                }
+            }
+        }
+        .slider-hsa{
+            .monthly-hsa-values{
+                .hsa-min{
+                    position: absolute;
+                    left: -10px;
+                    top: -1px;
+                }
+                .hsa-value{
+                    position: absolute;
+                    left: 232px;
+                }
+                .hsa-max{
+                    position: absolute;
+                    right: 6px;
+                    top: 0px;
+                }
+
+            }
+        }
+        .slider-premium{
+            .premium-level-value{
+                .premium-min{
+                    position: absolute;
+                    left: -10px;
+                    top: -1px;
+                }
+                .hsa-value{
+                    position: absolute;
+                    left: 232px;
+                }
+                .premium-max{
+                    position: absolute;
+                    right: 6px;
+                }
+            }
+            .employer-premium-bar{
+                position: absolute;
+                top: 294px;
+                left: 105px;
+                width: 101px;
+                height: 20px;
+                background-color: #fcdb67;
+                border: 1px solid #333;
+                z-index: -1;
+                .round(3px);
+            }
+            .employer-four{
+                position: absolute;
+                top: 314px;
+                left: 196px;
+                width: 100px;
+                height: 20px;
+                font-size: 12px;
+                line-height: 13px;
+                color: #ababab;
+            }
+            .employer-three{
+                position: absolute;
+                top: 314px;
+                left: 153px;
+                width: 100px;
+                height: 20px;
+                font-size: 12px;
+                line-height: 13px;
+                color: #ababab;
+            }
+            .employer-six{
+                position: absolute;
+                top: 314px;
+                left: 286px;
+                width: 100px;
+                height: 20px;
+                font-size: 12px;
+                line-height: 13px;
+                color: #ababab;
+            }
+        }
+    }
+}

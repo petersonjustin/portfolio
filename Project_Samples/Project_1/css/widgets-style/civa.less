@@ -1,0 +1,284 @@
+/*Definitions*/
+.grayButton{
+    width: 50px;
+    height: 30px;
+    padding: 4px 5px 4px 5px!important;
+    /*font-family: 'alte_haas_groteskregular';*/
+    color: #333;
+    font-size: 16px;
+    line-height: 18px;
+    border: 2px solid #bfbfbf;
+    border-radius: 3px;
+    text-transform: none;
+    text-align: center;
+    background: #cecece; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NlY2VjZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5Njk2OTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #cecece 0%, #969696 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cecece), color-stop(100%,#969696)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #cecece 0%,#969696 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #cecece 0%,#969696 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #cecece 0%,#969696 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #cecece 0%,#969696 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cecece', endColorstr='#969696',GradientType=0 ); /* IE6-8 */
+
+}
+
+/* CIVA Widget*/
+.civa-widget{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .civa-wrapper{
+        width: 490px;
+        height: 270px;
+        background-color: #fefefe;
+        color: #333;
+        position: absolute;
+        bottom: 0px;
+        z-index: 150;
+        border-radius: 5px;
+        border-top: 2px solid #ccc;
+        border-right: 2px solid #ccc;        
+        .civa-buttons-wrapper{
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 20;
+            a.civa-buttons-a{
+                text-decoration: none;
+                color: #464646;
+                text-align: center;
+                .civa-buttons{
+                    display: block;
+                    position: relative;
+                    margin: 3px;
+                    background: #ccc;
+                    border: #555 1px solid;
+                    .grayButton();
+                    height: 25px;
+                    width: 150px;
+                }
+            }
+        }
+        .civa-video-wrapper{
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 300px;
+            height: 270px;
+            z-index: 20;
+            img.civa-park{
+                position: absolute;
+                bottom: 3px;
+                right: 90px;
+                z-index: 10;
+                height: 270px;
+                width: auto;
+            }
+            .civa-watermark{
+                position: absolute;
+                bottom: 5px;
+                right: 0px;
+                z-index: 10;
+                height: 20px;
+                opacity: 0.7;
+            }
+        }
+    }
+    .chat-wrapper{
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 448px;
+        height: 270px;
+        font-size: 18px;
+        background-color: #f3f2f2;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        .chat-header{
+            height: 22px;
+            width: 409px;
+            margin: 5px 10px 0 7px;
+            padding: 0 0 0 5px;
+            font-size: 18px;
+            line-height: 16px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .chat-close{
+            position: absolute;
+            top: 7px;
+            right: 5px;
+            width: 16px;
+            height: 16px;
+            background: url('http://codebaby.com/customers/carefirst_benefit_focus/img/close-x.png');
+            cursor: pointer;
+        }
+        .chat-content-wrapper{
+
+            img.chat-content-image{
+                height: 230px;
+                width: auto;
+                padding: 2px 0 0 3px;
+                margin: 0 0 0 40px;
+            }
+        }
+    }
+    .faq-wrapper{
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 448px;
+        height: 270px;
+        font-size: 18px;
+        background-color: #f3f2f2;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        .faq-header{
+            height: 22px;
+            width: 409px;
+            margin: 5px 10px 0 7px;
+            padding: 0 0 0 5px;
+            font-size: 18px;
+            line-height: 16px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .faq-close{
+            position: absolute;
+            top: 7px;
+            right: 5px;
+            width: 16px;
+            height: 16px;
+            background: url('http://codebaby.com/customers/carefirst_benefit_focus/img/close-x.png');
+            cursor: pointer;
+        }
+        .faq-content-wrapper{
+
+            .civa-bar{
+                height: 35px;
+                width: 445px;
+                border-radius: 3px;
+                z-index: 20;
+                .civa-search{
+                    float: right;
+                    input{
+                        width: 200px;
+                        padding: 2px 0;
+                        margin: 2px 0;
+                        border-radius: 20px;
+                        outline: none;
+                        padding-left: 10px;
+                        font-size: 14px;
+                        line-height: 16px;
+                    }
+                }
+            }
+            .faq-list{
+                position: absolute;
+                top: 80px;
+                left: 30px;
+            }
+        }
+    }
+    .hsa-wrapper{
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 448px;
+        height: 270px;
+        font-size: 18px;
+        background-color: #f3f2f2;
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        .hsa-header{
+            height: 22px;
+            width: 409px;
+            margin: 5px 10px 0 7px;
+            padding: 0 0 0 5px;
+            font-size: 18px;
+            line-height: 16px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+        .hsa-close{
+            position: absolute;
+            top: 7px;
+            right: 5px;
+            width: 16px;
+            height: 16px;
+            background: url('http://codebaby.com/customers/carefirst_benefit_focus/img/close-x.png');
+            cursor: pointer;
+        }
+
+        .fade-wrapper{
+            font-size: 18px;
+            color: #464646;
+            margin: 10px 0 0 30px;
+            line-height: 20px;
+            .hsa-fade-1{
+
+            }
+            .hsa-fade-2{
+
+            }
+            .hsa-fade-3{
+
+            }
+            .hsa-fade-4{
+
+            }
+            .hsa-fade-5{
+
+            }
+            .hsa-fade-6{
+                div{
+                    font-size: 14px;
+                    margin: 10px 0 0 0;
+                }
+                ul{
+                    font-size: 14px;
+                    margin-top: 1px;
+                    li{
+                        margin: 0;
+                        padding: 0;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+        .hsa-button{
+
+            div{
+                .grayButton();
+                padding: 4px 0;
+                width: 125px;
+                font-size: 16px;
+                line-height: 16px;
+                height: 20px;
+            }
+        }
+        .button-1{
+            position: absolute;
+            bottom: 50px;
+            right: 8px;
+        }
+        .button-2{
+            position: absolute;
+            bottom:10px;
+            right: 8px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

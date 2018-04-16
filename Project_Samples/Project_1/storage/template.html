@@ -1,0 +1,46 @@
+<script type="text/template" id="storage_for_old_results">
+        <div class="results-wrapper">
+            <div class="results-header h3">Plan Evaluation</div>
+            <div class="premium-wrapper">
+                <div class="your-premium">Monthly<br/>Premium<br/>Total</div>
+                <div class="your-premium-total">$<span></span></div>
+                <div class="plan-cost-premium">$<span></span></div>
+                <div class="plan-cost-bar">
+                    <div class="bar1 premium-bar"></div>
+                    <div class="bar2"></div>
+                    <div class="dotted-box"></div> 
+                </div>
+                <div class="employer-contribution">Employer<br />Contribution</div>
+                <div class="employer-contribution-number">$600</div>
+                <div class="plan-cost-label dilb">Your Premium Contribution:</div>
+                <div class="plan-cost-label-hb dilb">
+                    <a href="#">
+                        <img class="help-bubble-img" src="img/help-bubble.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="hsa-summary-wrapper hsa-hiding-wrapper">
+                <div class="hsa-summary-bar">
+                    <div class="bar1 hsa-total-bar"></div>
+                    <div class="bar2"></div>
+                    <div class="bar-container"></div>
+                    <div class="dotted-box"></div> 
+                    <div class="dotted-box2"></div> 
+                </div>
+                <div class="your-premium">Monthly<br/>HSA Total</div>
+                <div class="hsa-input">$<span><%= userOptions.get('reportHsa') %></span></div>
+                <div class="employer-contribution">Employer<br />Contribution</div>
+                <div class="employer-contribution-number">$100</div>
+                <div class=""></div>
+                <div class="hsa-summary-divider"></div>
+                <div class="hsa-summary-label dilb">Your HSA Contribution: $<span><%= userOptions.get('employerHsaContribution') + userOptions.get('reportHsa') %></span></div>
+                <div class="hsa-summary-label-hb dilb">
+                    <a href="#">
+                        <img class="help-bubble-img" src="img/help-bubble.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </script>
+    </script>

@@ -1,0 +1,147 @@
+.user-options-widget {
+  position: absolute;
+  top: 35px;
+  left: 206px;
+  width: 436px;
+  height: 335px;
+  z-index: 10;
+}
+.user-options-widget .slider-wrapper {
+  width: 436px;
+  height: 325px;
+  position: relative;
+  margin: auto;
+  z-index: 5;
+  padding: 5px 0 0 0;
+  border: 1px solid #aaa;
+  background-color: #fafafa;
+}
+.user-options-widget .slider-wrapper .slider-header {
+  position: relative;
+  width: 416px;
+  font-size: 18px;
+  height: 22px;
+  margin: 0 0 0 7px;
+  padding: 0 0 0 5px;
+  line-height: 16px;
+  border-right: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.user-options-widget .slider-wrapper .hsa-slider-cover {
+  position: absolute;
+  z-index: 10;
+  bottom: 11px;
+  left: 10px;
+  /*background-color: red;*/
+
+  height: 40px;
+  width: 420px;
+}
+.user-options-widget .slider-wrapper .slider-title {
+  font-size: 16px;
+  line-height: 18px;
+  /*border-bottom: 1px solid #aaa;*/
+
+}
+.user-options-widget .slider-wrapper .slider-values {
+  padding: 3px 0 6px 0;
+  height: 16px;
+  line-height: 16px;
+}
+.user-options-widget .slider-wrapper table {
+  border-spacing: 0;
+  border: none;
+}
+.user-options-widget .slider-wrapper table tr {
+  border-spacing: 0;
+  border: none;
+}
+.user-options-widget .slider-wrapper table tr td {
+  border-spacing: 0;
+  border: none;
+}
+.user-options-widget .slider-wrapper .single-slider {
+  width: 430px;
+  height: 65px;
+  margin: 3px auto;
+}
+.user-options-widget .slider-wrapper .single-slider table {
+  margin: auto;
+}
+.user-options-widget .slider-wrapper .single-slider table .slider-style a {
+  outline: none;
+}
+.user-options-widget .slider-wrapper .slider-network {
+  margin-top: 5px;
+}
+.user-options-widget .slider-wrapper .slider-network .network-values .network-focused {
+  position: absolute;
+  left: 10px;
+}
+.user-options-widget .slider-wrapper .slider-network .network-values .network-broad {
+  position: absolute;
+  right: 10px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .deductible-values .deductible-1 {
+  position: absolute;
+  left: 10px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .deductible-values .deductible-2 {
+  position: absolute;
+  left: 97px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .deductible-values .deductible-3 {
+  position: absolute;
+  left: 196px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .deductible-values .deductible-4 {
+  position: absolute;
+  left: 295px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .deductible-values .deductible-5 {
+  position: absolute;
+  left: 386px;
+}
+.user-options-widget .slider-wrapper .slider-deductible .warning-icon {
+  position: absolute;
+  top: 107px;
+  right: 13px;
+  display: none;
+  cursor: help;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-0 {
+  position: absolute;
+  left: 10px;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-1 {
+  position: absolute;
+  left: 87px;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-2 {
+  position: absolute;
+  left: 166px;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-3 {
+  position: absolute;
+  left: 244px;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-4 {
+  position: absolute;
+  left: 324px;
+}
+.user-options-widget .slider-wrapper .slider-copay .copay-values .copay-5 {
+  position: absolute;
+  left: 400px;
+}
+.user-options-widget .slider-wrapper .slider-hsa .monthly-hsa-values .hsa-min {
+  position: absolute;
+  left: 10px;
+}
+.user-options-widget .slider-wrapper .slider-hsa .monthly-hsa-values .hsa-value {
+  position: absolute;
+  left: 144px;
+}
+.user-options-widget .slider-wrapper .slider-hsa .monthly-hsa-values .hsa-max {
+  position: absolute;
+  right: 6px;
+}

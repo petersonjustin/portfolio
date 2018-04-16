@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CodeBaby Health Plan Modeler Demo</title>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery-ui-1.9.2.custom.min.css" media="all"/>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="stage_template">
+        <div class="portal-header h2">Your Health Plan Modeler</div>
+        <div class="close-button"></div>
+    </script>
+
+    <script type="text/template" id="blank_widget_template">
+        Blank Widget
+    </script>
+
+    <script type="text/template" id="dc_widget">
+        <div class="family-wrapper">
+            <div class="dc-header h3">Your Family</div>
+            <table width="170px">
+                <tr>
+                    <td align="center">
+                        <div class="dc-monthly-premium dc-first">Plan Options for:</div>
+                        <div class="dc-premium dc-second">Employee +<br/>Spouse</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="dc-wrapper">
+            <div class="dc-header h3">Employer Contribution</div>
+            <table width="170px">
+                <tr>
+                    <td align="center">
+                        <div class="dc-monthly-premium dc-first">Premium</div>
+                        <div class="dc-premium dc-second">$<%= userOptions.escape('employerContribution') %><span> (monthly)</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <div class="hsa-hiding-wrapper">
+                            <div class="dc-hsa-contribution dc-first">Health Savings Account</div>
+                            <div class="dc-hsa dc-second">$1200<span> (annually)</span></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="start-hb">
+                <a href="#">
+                    <img class="help-bubble-img" src="img/help-bubble.png" />
+                </a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="user_options_widget">
+        <div class="slider-wrapper">
+            <div class="slider-header h3"> Configure Your Plan</div>
+            <table width="420px">
+                <tr>
+                    <td>
+                        <div class="single-slider slider-network">
+                            <table class="sliders" width="400px">
+                                <tr>
+                                    <td align="center">
+                                        <div class="slider-title">Provider Network Coverage Levels</div>
+                                        <div class="network-values slider-values">
+                                            <div class="network-focused dilb">Broad</div>
+                                            <div class="network-broad dilb">Broadest</div>
+                                        </div>
+                                        <div class="network-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-deductible">
+                            <table class="sliders" width="400px">
+                                <tr>
+                                    <td align="center">
+                                        <div class="slider-title">Deductible</div>
+                                        <div class="deductible-values slider-values">
+                                            <div class="deductible-1 dilb">&#36;5000</div>
+                                            <div class="deductible-2 dilb">&#36;4000</div>
+                                            <div class="deductible-3 dilb">&#36;3000</div>
+                                            <div class="deductible-4 dilb">&#36;2000</div>
+                                            <div class="deductible-5 dilb">&#36;1000</div>
+                                        </div>
+                                        <div class="deductible-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="warning-icon">
+                                <img src="img/warning-icon.png"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-copay">
+                            <table class="sliders" width="400px">
+                                <tr>
+                                    <td align="center">
+                                        <div class="slider-title">Co-Pay</div>
+                                        <div class="copay-values slider-values">
+                                            <div class="copay-0 dilb">&#36;50</div>
+                                            <div class="copay-1 dilb">&#36;40</div>
+                                            <div class="copay-2 dilb">&#36;30</div>
+                                            <div class="copay-3 dilb">&#36;20</div>
+                                            <div class="copay-4 dilb">&#36;10</div>
+                                            <div class="copay-5 dilb">&#36;0</div>
+                                        </div>
+                                        <div class="copay-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-hsa">
+                            <table class="sliders" width="400px">
+                                <tr>
+                                    <td align="center">
+                                        <div class="hsa-hiding-wrapper">
+                                            <div class="slider-title">My Monthly HSA Contribution</div>
+                                            <div class="monthly-hsa-values slider-values">
+                                                <div class="hsa-min dilb">Minimum</div>
+                                                <div class="hsa-value dilb">Your Contribution: $<span><%= userOptions.escape('reportHsa') %></span></div>
+                                                <div class="hsa-max dilb">Maximum</div>
+                                            </div>
+                                            <div class="monthly-hsa-slider slider-style"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+
+    <script type="text/template" id="plan_widget">
+        <div class="plan-wrapper">
+            <div class="header">
+                <div class="label h3">The Bottom Line</div>
+            </div>
+            <div class="plans-wrapper">
+                <div class="plan" >
+                </div>
+            </div>
+            <div class="time-compare-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                       <div class="table-content">Deductible:</div>
+                                       <div class="table-content">Copay:</div>
+                                       <div class="table-content">Provider Network Coverage:</div>
+                                   </td>
+                                   <td>
+                                       <div class="table-content actual-deductible">$<span></span></div>
+                                       <div class="table-content actual-copay">$<span></span></div>
+                                       <div class="table-content actual-network"></div>
+                                   </td>
+                               </tr>
+                           </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <div class="content-4">
+                            <ul>
+                                <li>We would place a useful bit of information here:</li>
+                                <li>We would place a useful bit of information here:</li>
+                            </ul>
+                           </div>
+                       </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </script> 
+
+    <script type="text/template" id="results_widget">
+        <div class="results-wrapper">
+            <div class="results-header h3">Plan Evaluation</div>
+            <div class="premium-wrapper">
+                <div class="your-premium">Monthly<br/>Premium<br/>Total</div>
+                <div class="your-premium-total">$<span></span></div>
+                <div class="plan-cost-premium">$<span></span></div>
+                <div class="plan-cost-bar">
+                    <div class="bar1 premium-bar"></div>
+                    <div class="bar2"></div>
+                    <div class="dotted-box"></div> 
+                </div>
+                <div class="employer-contribution">Employer<br />Contribution</div>
+                <div class="employer-contribution-number">$600</div>
+                <div class="plan-cost-label dilb">Your Premium Contribution:</div>
+                <div class="plan-cost-label-hb dilb">
+                    <a href="#">
+                        <img class="help-bubble-img" src="img/help-bubble.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="hsa-summary-wrapper hsa-hiding-wrapper">
+                <div class="hsa-summary-bar">
+                    <div class="bar1 hsa-total-bar"></div>
+                    <div class="bar2"></div>
+                    <div class="bar-container"></div>
+                    <div class="dotted-box"></div> 
+                    <div class="dotted-box2"></div> 
+                </div>
+                <div class="your-premium">Monthly<br/>HSA Total</div>
+                <div class="hsa-input">$<span><%= userOptions.get('reportHsa') %></span></div>
+                <div class="employer-contribution">Employer<br />Contribution</div>
+                <div class="employer-contribution-number">$100</div>
+                <div class=""></div>
+                <div class="hsa-summary-divider"></div>
+                <div class="hsa-summary-label dilb">Your HSA Contribution: $<span><%= userOptions.get('employerHsaContribution') + userOptions.get('reportHsa') %></span></div>
+                <div class="hsa-summary-label-hb dilb">
+                    <a href="#">
+                        <img class="help-bubble-img" src="img/help-bubble.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </script>
+
+    
+    <script type="text/template" id="civa_widget">
+        <div class="chat-wrapper">
+            <div class="chat-header">Chat</div>
+            <div class="chat-close"></div>
+            <div class="chat-content-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <img class="chat-content-image" src="img/chat.png" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="faq-wrapper">
+            <div class="faq-header">FAQs</div>
+            <div class="faq-close"></div>
+            <div class="faq-content-wrapper">
+                <div class="civa-bar">
+                    <div class="civa-search">
+                        <input placeholder="search now">
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <img src="img/faq-list.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="hsa-wrapper">
+            <div class="hsa-header">Health Savings Account</div>
+            <div class="hsa-close"></div>
+            <div class="fade-wrapper">
+                <div class="hsa-fade-1">- Pre-tax savings</div>
+                <div class="hsa-fade-2">- Contribution from your employer</div>
+                <div class="hsa-fade-3">- It&#39;s your money; even if you leave</div>
+                <div class="hsa-fade-4">- Account balance carrys into the next year</div>
+                <div class="hsa-fade-5">- Easy to use; like a debit card</div>
+                <div class="hsa-fade-5">- Covers many out-of-pocket expenses</div>
+                <div class="hsa-fade-6">
+                    <div class="">Qualified medical expenses</div>
+                    <ul>
+                        <li>Dental</li>
+                        <li>Vision</li>
+                        <li>Co-Pays</li>
+                        <li>Prescriptions</li>
+                        <li>and More&#33;</li>
+                    </ul>
+                </div>
+            </div>
+            <a  class="hsa-button" href="#">
+                <div class="button-1">2013 Rules &amp; Regs</div>
+            </a>
+            <a  class="hsa-button" href="#">
+                <div class="button-2">Learn More</div>
+            </a>
+        </div>
+        <div class="civa-wrapper">
+            <div class="civa-buttons-wrapper">
+                <table width="180px">
+                    <% faqs.each(function(faq){ %>
+                        <tr>
+                            <td>
+                                <a href="#" class="civa-buttons-a">
+                                    <div class="civa-buttons" valign="center" data-connector="<%= faq.escape('trigger') %>"><%= faq.escape('label') %></div>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </table>
+            </div>
+            <div class="civa-video-wrapper" id="video-anchor">
+                <img class="civa-watermark" src="img/CIVA_small_gray.png"
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="proceed_widget">
+        <div class="cost-summary">
+            <table width="430px">
+                <tr>
+                    <td>
+                        <div class="table-data-wrapper">
+                            <div class="table-data dilb">Premium:</div>
+                            <div class="table-data premium-table dilb">$<span>300</span></div>
+                            <div class="your-monthly dilb">Your Monthly Contribution:</div>
+                        </div>
+                        <div class="table-total-wrapper">
+                            <div class="table-data dilb">HSA:</div>
+                            <div class="table-data summary-hsa dilb">$<span></span></div>
+                            <div class="monthly-total dilb">$<span></span></div>
+                        </div>
+                    </td>
+                    <td align="center">
+                        <a href="#" class="select-plan-button">
+                            <div valign="center" class="">Finished</div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/CIVA.js"></script>
+    <script src="js/widget-js/user-options-widget.js"></script>
+    <script src="js/widget-js/user-results-widget.js"></script>
+    <script src="js/widget-js/civa-player-widget.js"></script>
+    <script type="text/javascript" src="http://d1v5fcs94ctw3p.cloudfront.net/cdm-2.5.22.2a100f4.js?CodeBaby=account%3A185%3Bpage%3AIndex" ></script>
+</body>
+</html>

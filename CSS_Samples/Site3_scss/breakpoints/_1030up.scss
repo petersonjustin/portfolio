@@ -1,0 +1,298 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+body{
+    .quote{
+        font-size: 2.44em;
+        color: $gray-text;
+    }
+}
+
+.wrap{
+    width: 1040px;
+}
+
+
+/* H's */
+h1, .h1{
+    font-size: 4.38em;
+}
+
+h2, .h2{
+    font-size: 3.13em;
+}
+
+h3, .h3{
+    font-size: 2em;
+}
+
+h4, .h4{
+    font-size: 1.75em;
+}
+
+h5, .h5{
+    font-size: 1.5em;
+}
+
+h6, .h6{
+    font-size: 1.25em;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+
+/*********************
+    HEADER STYLES
+*********************/
+
+.header{
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    border-bottom: 1px solid $light-gray-text;
+    @include box-shadow(0px, 5px, 5px, 0px, rgba(88,88,91,0.30));
+    #inner-header{
+
+        .large-header{
+            .login{
+                background-color: $blue;
+                padding: 7px 0;
+                color: $white;
+            }
+            .main{
+                padding: 34px 0;
+                img.tablet-logo{
+                    display: none;
+                }
+                img.desktop-logo{
+                    display: block;
+                }
+                .options{
+                    padding: 5px 0;
+                }
+                nav{
+                    text-align: right;
+                    ul#menu-main-menu{
+                        padding: 6px 0px;
+
+                        li{
+                            margin-right: 24px;
+                            float: right;
+                            &:first-child{
+                                margin-right: 10px;
+                            }
+                            a{
+                                font-size: 1.21em;
+                                padding: 0;
+                                color: $link-color;
+                                text-decoration: none;
+                                /* on hover */
+                                &:hover, &:focus{
+                                    color: $link-hover;
+                                    text-decoration: none;
+                                }
+
+                                /* on click */
+                                &:active{
+                                    color: $link-active;
+                                    text-decoration: none;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                button.green-btn{
+                    font-size: 1.31em;
+                    line-height: 1em;
+                    font-family: $titillium;
+                    letter-spacing: -0.05em;
+                    padding: 10px 10px;
+
+                }
+            }
+        }
+    }
+}
+
+#content{
+    #inner-content{
+        #main{
+
+            a{
+                font-size: 1.31em;
+            }
+            p{
+                font-size: 1.31em;
+                a{
+                    font-size: 1.05em;
+                }
+            }
+            .blog-intro-header{
+
+                .slash-bg{
+
+                    .featured-wrap{
+                        padding: 50px 60px 50px 60px;
+
+
+                        p.featured-excerpt{
+                            margin-bottom: 90px;
+
+                        }
+                    }
+                }
+            }
+            .sub-featured-wrap{
+                .sub-featured-post{
+                    .gray-wrapper{
+                        .title{
+                            font-weight: 700;
+                        }
+
+                    }
+                }
+            }
+            .single-client-header{
+                .client-title{
+                    font-size: 3.13em;
+                }
+                .client-location{
+                    font-size: 2em;
+                }
+                .client-label{
+                    font-size: 1.75em;
+                }
+                .client-name{
+                    font-size: 1.25em;
+                }
+            }
+            section.entry-content{
+
+                // blog-intro page standard posts
+                .blog-intro-inner{
+                    article{
+                        margin-bottom: 40px;
+                    }
+                }
+                .member{
+                    margin-bottom: 125px;
+                }
+
+            }
+            // client list on Our clients page
+            .clients-list{
+                .client{
+                    .client-box{
+
+                        .quote{
+                            font-size: 2em;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.single{
+    #content{
+        #main{
+            footer.article-footer{
+                .links{
+                    float: left;
+                }
+                .back-to-blog{
+                    float: right;
+                }
+            }
+        }
+    }
+}
+
+/* Footer */
+.footer{
+    .cta-container{
+        .footer-cta{
+            padding: 22px 0px;
+            font-size: 1.63em;
+            .text{
+                margin-bottom: 0px;
+                text-align: right;
+            }
+        }
+    }
+    .inner-footer{
+        min-height: 200px;
+        .divider{
+            padding: 0 5px;
+        }
+        .footer-main{
+            margin-top: 55px;
+
+            .nav{
+
+                li{
+                    padding-right: 39px;
+                    width: auto;
+
+                    &:nth-child(odd){
+                        clear: none;
+                        margin-bottom: 0;
+
+                    }
+                    &:nth-child(even){
+                        float: left;
+                        clear: none;
+                    }
+                    ul.sub-menu{
+                        li{
+
+                            &:nth-child(2){
+                                max-width: 122px;
+                            }
+                        }
+                    }
+                }
+            }
+            .contact{
+                .search{
+                    margin: 0;
+                }
+                .office{
+                    padding-right: 0;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .footer-resources{
+            .links{
+                text-align: left;
+            }
+            .white-badge{
+                div{
+                    display: inline-block;
+                }
+                .icon{
+                    text-align: left;
+                    display: inline-block;
+                    float: left;
+                }
+            }
+        }
+    }
+}

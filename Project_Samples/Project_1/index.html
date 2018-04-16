@@ -1,0 +1,421 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CodeBaby BF Stage Demo</title>
+    <link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/custom-theme/jquery-ui-1.9.2.custom.min.css" media="all"/>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+
+    <!-- Templates -->
+    <script type="text/template" id="stage_template">
+        <div class="portal-header h2">Your HealthyBlue Plan Choice</div>
+        <div class="carefirst-logo">
+            <img src="img/carefirst_logo.png" />
+        </div>
+        <div class="close-button"></div>
+        <a href="#" class="select-plan-button">
+            <div valign="center" class="">Pick This Plan</div>
+        </a>
+        <div class="dynamic-base"></div>
+    </script>
+
+    <script type="text/template" id="blank_widget_template">
+        Blank Widget
+    </script>
+
+
+    <script type="text/template" id="user_options_widget">
+        <div class="slider-wrapper">
+            <div class="slider-header h3"> Configure Your Plan</div>
+            <div class="plan-select">
+                <div class="dilb">Select Coverage</div>
+                <select>
+                    <option value="individual">Individual</option>
+                    <option value="married">Married</option>
+                    <option value="married1">Family</option>
+                </select>
+            </div>
+            <table width="420px">
+                <tr>
+                    <td>
+                        <div class="single-slider slider-network">
+                            <table class="sliders" width="350px">
+                                <tr>
+                                    <td>
+                                        <div class="slider-title">Network<br/>Coverage Levels</div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="network-values slider-values">
+                                            <div class="network-focused dilb">Broad</div>
+                                            <div class="network-broad dilb">Broadest</div>
+                                        </div>
+                                        <div class="network-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="doctor"><a href="#">(My Doctor?)</a></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-deductible">
+                            <table class="sliders" width="350px">
+                                <tr>
+                                    <td>
+                                        <div class="slider-title">Deductible</div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="deductible-values slider-values">
+                                            <div class="deductible-1 dilb">&#36;0</div>
+                                            <div class="deductible-2 dilb">&#36;500</div>
+                                            <div class="deductible-3 dilb">&#36;1000</div>
+                                            <div class="deductible-4 dilb">&#36;1500</div>
+                                            <div class="deductible-5 dilb">&#36;2000</div>
+                                        </div>
+                                        <div class="deductible-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="warning-icon">
+                                <img src="img/warning-icon.png"/>
+                                <span>Lost Savings. Click Here!</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-copay">
+                            <table class="sliders" width="350px">
+                                <tr>
+                                    <td>
+                                        <div class="slider-title">Co-Pay</div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="copay-values slider-values">
+                                            <div class="copay-0 dilb">&#36;0</div>
+                                            <div class="copay-1 dilb">&#36;10</div>
+                                            <div class="copay-2 dilb">&#36;20</div>
+                                            <div class="copay-3 dilb">&#36;30</div>
+                                            <div class="copay-4 dilb">&#36;40</div>
+                                            <div class="copay-5 dilb">&#36;50</div>
+                                        </div>
+                                        <div class="copay-slider slider-style"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-hsa hsa-disable">
+                            <table class="sliders" width="350px">
+                                <tr>
+                                    <td valign="middle">
+                                        <div class="slider-title">HSA Contribution</div>
+                                    </td>
+                                    <td valign="middle">
+                                        <div class="slider-hiding-wrapper">
+                                            <div class="slider-pre-color"></div>
+                                            <div class="slider-fake-bar"></div>
+                                            <div class="one-value">&#36;100</div>
+                                            <div class="hsa-slider-blue-bar"></div>
+                                            <div class="monthly-hsa-values slider-values">
+                                                <div class="hsa-min dilb">&#36;0</div>
+                                                <div class="hsa-max dilb">&#36;<span>2000</span></div>
+                                            </div>
+                                            <div class="monthly-hsa-slider slider-style"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="single-slider slider-premium">
+                            <table class="sliders" width="350px">
+                                <tr>
+                                    <td>
+                                        <div class="slider-title">Premium Level</div>
+                                    </td>
+                                    <td align="center">
+                                        <div class="slider-hiding-wrapper">
+                                            <div class="premium-level-value slider-values">
+                                                <div class="premium-min dilb">&#36;0</div>
+                                                <div class="premium-max dilb">&#36;950</div>
+                                            </div>
+                                            <div class="premium-level-slider slider-style"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="employer-premium-bar"></div>
+                            <div class="employer-four">&#36;400</div>
+                            <div class="employer-three">&#36;300</div>
+                            <div class="employer-six">&#36;600</div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+
+    <script type="text/template" id="results_widget">
+        <div class="slider-header h3">Plan Evaluation</div>
+        <div class="left-column">
+            <div class="column-header">
+                <div class="light-header">monthly</div>
+                <div class="main-header">Premium &amp; HSA</div>
+            </div>
+            <div class="defined-cont-wrap">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <div class="l-a contribution-head">Employer Contribution:</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">Premium:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text employer-premium">&#36;<span><%= employerPremium %></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">HSA:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text employer-hsa-contribution">&#36;<span><%= userOptions.get('empolyerHsaContribution') %></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="credit-hide l-a contribution-text credit-label">Credit:</div>
+                        </td>
+                        <td>
+                            <div class="credit-hide credit-amount l-a contribution-text employer-credit credit-label">&#36;<span><%= credit %></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">Total:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text employer-total">&#36;<span><%= employerPremium + userOptions.get('empolyerHsaContribution') + credit %></span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="your-cont-wrap">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <div class="l-a contribution-head">Your Contribution:</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">Premium:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text user-premium">&#36;<span><%= userPremium %></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">HSA:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text user-hsa">&#36;<span><%= round(userOptions.get('hsa')/12,0) %></span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="l-a contribution-text">Total:</div>
+                        </td>
+                        <td>
+                            <div class="l-a contribution-text user-total">&#36;<span><%= round(userPremium + userOptions.get('hsa')/12,0) %></span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="total-pay">
+                <div class="text ">You Pay:</div>
+                <div class="total user-payment">&#36;<span><%= round(userPremium + userOptions.get('hsa')/12,0) %></span></div>
+            </div>
+            <div class="review-button-wrap">
+                <a class="" href="#">
+                    <div class="review-button">Review Your Benefits</div>
+                </a>
+            </div>
+        </div>
+        <div class="right-column-cover">
+            <div class="text-button">Tell me how to<br/>get my savings back!</div>
+            <div class="hide-button">
+                <a href="#">Click to Save</a>
+            </div>
+        </div>
+        <div class="right-column hsa-disable">
+             <div class="column-header">
+                <div class="light-header">annual</div>
+                <div class="main-header">Health Expenses</div>
+                <div class="sub-header">estimate</div>
+            </div>
+            <div class="bar-background-wrapper">
+                <div class="bar-main-container"></div>
+                <div class="top-line"></div>
+                <div class="bottom-line"></div>
+                <div class="max-oop-label">Maximum<br/>Out-of-Pocket</div>
+                <div class="max-oop-number">(&#36;5,950)</div>
+                <div class="five-label text-label">&#36;5,000</div>
+                <div class="four-label text-label">&#36;4,000</div>
+                <div class="three-label text-label">&#36;3,000</div>
+                <div class="two-label text-label">&#36;2,000</div>
+                <div class="one-label text-label">&#36;1,000</div>
+                <div class="high-bar bar-divider"></div>
+                <div class="high-mid-bar bar-divider"></div>
+                <div class="low-mid-bar bar-divider"></div>
+                <div class="low-bar bar-divider"></div>
+                <div class="lowest-bar bar-divider"></div>
+                <div class="employer-cont-hsa">Employer HSA<br/>Contribution<br/>&#36;<span><%= (credit + userOptions.get('empolyerHsaContribution'))*12 %></span></div>
+            </div>
+            <div class="graph-wrapper">
+                <div class="employer-hsa-graph"></div>
+                <div class="your-hsa-graph"></div>
+                <div class="credit-filler"></div>
+                <div class="pointers">
+                    <div class="deductible-pointer-wrapper">
+                        <div class="d-pointer"></div>
+                        <div class="d-text credit-hide deductible-pointer">Deductible<br/>&#36;<span><%= deductibleMap[userOptions.get('deductible')] %></span></div>
+                    </div>
+                    <div class="hsa-pointer-wrapper">
+                        <div class="hsa-pointer"></div>
+                        <div class="hsa-text">Your HSA<br/>Contribution<br/>&#36;<span><%= userHsaContribution %></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="credit-options credit-hide">&#42; Credit applied to HSA</div>
+        </div>
+        <div class="effects-box">
+            <!-- This area is for the custom arrow and text that is supposed to be showing during effects -->
+            <div class="credit-hb-wrapper">
+                <div class="credit-hb-text dilb">New Savings ! <a href="#">Click Here !</a></div>
+                <div class="credit-hb dilb">
+                    <img class="help-bubble-img" src="img/help-bubble.png" />
+                </div>
+            </div>
+            <div class="credit-effect-wrapper">
+                <div class="credit-text">
+                    <span class="credit-total credit-showing">&#36;<span style="display: inline-block;"><%= credit*12 %></span>/yr</span><br/>in Additional<br/>Savings!*
+                </div>
+                <div class="credit-bar-1"></div>
+                <div class="credit-bar-2"></div>
+                <div class="credit-bar-3"></div>
+            </div>
+
+        </div>
+    </script>
+
+    
+    <script type="text/template" id="civa_widget">
+        <div class="chat-wrapper">
+            <div class="chat-header">Chat</div>
+            <div class="chat-close"></div>
+            <div class="chat-content-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <img class="chat-content-image" src="img/chat.png" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="faq-wrapper">
+            <div class="faq-header">FAQs</div>
+            <div class="faq-close"></div>
+            <div class="faq-content-wrapper">
+                <div class="civa-bar">
+                    <div class="civa-search">
+                        <input placeholder="search now">
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <img src="img/faq-list.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="hsa-wrapper">
+            <div class="hsa-header">Health Savings Account</div>
+            <div class="hsa-close"></div>
+            <div class="fade-wrapper">
+                <div class="hsa-fade-1">- Pre-tax savings</div>
+                <div class="hsa-fade-2">- Contribution from your employer</div>
+                <div class="hsa-fade-3">- It&#39;s your money; even if you leave</div>
+                <div class="hsa-fade-4">- Account balance carrys into the next year</div>
+                <div class="hsa-fade-5">- Easy to use; like a debit card</div>
+                <div class="hsa-fade-5">- Covers many out-of-pocket expenses</div>
+                <div class="hsa-fade-6">
+                    <div class="">Qualified medical expenses</div>
+                    <ul>
+                        <li>Dental</li>
+                        <li>Vision</li>
+                        <li>Co-Pays</li>
+                        <li>Prescriptions</li>
+                        <li>and More&#33;</li>
+                    </ul>
+                </div>
+            </div>
+            <a  class="hsa-button" href="#">
+                <div class="button-1">2013 Rules &amp; Regs</div>
+            </a>
+            <a  class="hsa-button" href="#">
+                <div class="button-2">Learn More</div>
+            </a>
+        </div>
+        <div class="civa-wrapper">
+            <div class="civa-buttons-wrapper">
+                <table width="180px">
+                    <% faqs.each(function(faq){ %>
+                        <tr>
+                            <td>
+                                <a href="#" class="civa-buttons-a">
+                                    <div class="civa-buttons" valign="center" data-connector="<%= faq.escape('trigger') %>"><%= faq.escape('label') %></div>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </table>
+            </div>
+            <div class="civa-video-wrapper" id="video-anchor">
+                <img class="civa-park" src="img/CF_BF_ParkImage.png"/>
+                <img class="civa-watermark" src="img/CIVA_small_gray.png"/>
+            </div>
+        </div>
+    </script>
+
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/CIVA.js"></script>
+    <script src="js/widget-js/user-options-widget.js"></script>
+    <script src="js/widget-js/user-results-widget.js"></script>
+    <script src="js/widget-js/civa-player-widget.js"></script>
+    <script type="text/javascript">var cbConfig = {branded: true};</script>
+</body>
+</html>

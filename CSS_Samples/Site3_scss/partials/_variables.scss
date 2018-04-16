@@ -1,0 +1,74 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+// From AI - Project specific colors
+$blue: #0081C9;
+$dark-blue: #004987;
+$light-blue-bg: #196A9E;
+$red: #D3441C;
+$gray-text: #6D6E70;
+$gray-bg: #EFF5F9;
+$light-gray-text: #808080;
+$green: #4D9C2D;
+$bar-green: #76BD1E;
+$blue-active: #6BCFF4;
+$blue-hover: #1DAFEC;
+$footer-cta-bg-blue: #005492;
+$header_blue: #0081CB;
+$bubble_bg: #A5D3ED;
+$quote-text: #231F20;
+$gray-bar: #58585B;
+$blue-popup-bg: #0082CA;
+
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #323944;
+$white:             #fff;
+
+$light-gray:        #f8f9fa;
+$gray:              #eaedf2;
+$text-color:        $gray-text;
+$meta-gray:         #9fa6b4;
+
+$tan:               #eceee5;
+
+$green:             #7dd667;
+
+$bones-pink:        #f01d4f;
+$blue:              #2980b9;
+
+$link-color:        $dark_blue;
+$link-hover:        $blue_hover;
+$link-active:       $blue_active;
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+/* Fonts */
+
+
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
