@@ -20,4 +20,5 @@ Software product developed for patient engagement and higher completion rates in
 https://vimeo.com/245389097
 
 ## Check out other repo's I've contributed to! 
-https://github.com/SunKD/disappointed_fan
+https://github.com/SunKD/disappointed_fan - A group project built in less than a week. We queried Twitter's API for tweets that were written by salty fans in the hope of finding a twitter version of "Fan bloopers". Turns out, unless you want to pay Twitter, getting data from them is really difficult and gated. I worked on the responsive design and prototyped the first twitter curl approach which we later cut for an already established 3rd party library. 
+https://github.com/prescottbreeden/_31_by_3 - A C# project where our team built the traditional Casion game "31". Hoping to have a live version of this available soon. 
