@@ -1,6 +1,6 @@
 Thanks for checking out my portfolio!
 ========================================
-It doesnt look like much, but it wont stay that way forever. Most of my work that is portfolio worthy is stashed away in companies repositories. I have worked with multiple teams through many iterations of both client facing projects and internal software tools.
+It doesnt look like much, but it wont stay that way forever. Most of my work that is portfolio worthy is stashed away in companies repositories. I have worked with multiple teams through many iterations of both client facing projects and internal software tools. Two key things to keep in mind, none of the current projects on my portfolio or on this repo are responsive or have Accessibility integrated as most of them are prototypes, but I am very aware of and comfortable developing responsively accessible sites. 
 
 Feel free to reach out @ peterson.justin11@gmail.com if you have questions or want to see more!
 
