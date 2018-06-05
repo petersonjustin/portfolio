@@ -5,7 +5,7 @@ It doesnt look like much, but it wont stay that way forever. Most of my work tha
 Feel free to reach out @ peterson.justin11@gmail.com if you have questions or want to see more!
 
 ## Stormwater Risk Management
-One of the first sites that I built solo for a marketing firm in Colorado Springs - Built off of Wordpress, I used a customized base theme that was created by myself and a friend to develop these small business sites more efficiently. This project used Sass, shortcodes and a custom plugin for the client to add new customers to their site.  
+One of the first sites that I built solo for a marketing firm in Colorado Springs - Built off of Wordpress, I used a customized base theme that was created by myself and a friend to develop these small business sites more efficiently. This project used Sass, shortcodes and a custom post type for the client to add new customers to their site.  
 
 https://stormwaterrm.com/
 
